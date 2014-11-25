@@ -36,6 +36,8 @@ describe('LinksController', function () {
   it('should call getLinks() when controller is loaded', function () {
     var mockLinks = [{},{},{}];
     $httpBackend.expectGET("/api/links").respond(mockLinks);
+    // console.log(mockLinks + 'asdfds');
+    // console.log($scope.data.links);
     createController();
     $httpBackend.flush();
     expect($scope.data.links).to.eql(mockLinks);
