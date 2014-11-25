@@ -1,3 +1,8 @@
-<div id='container' ng-controller= "LinksController" ng-init="getLinks()">
-  <!-- Your html here -->
+<div id='container'>
+  <div ng-init='getLinks()' ng-model='data'>
+    <ul>
+      <li ng-repeat='link in data'> {{link[0].url}} -> <a href={{link[0].base_url}}/api/links/{{link[0].code}}>click</a></li>
+    </ul>
+  </div>
 </div>
+
