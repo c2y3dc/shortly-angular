@@ -5,11 +5,6 @@
         <span class="input-group-addon">Search</span>
         <input type="text" ng-model='search' class="form-control" placeholder="URL">
       </div>
-
-      <table class="table table-striped">
-
-
-
         <a class='list-group-item' href="{{link.base_url}}/api/links/{{link.code}}" ng-repeat="link in data.links | orderBy: '-visits' | filter:search"> visit count {{link.visits}} -- {{link.url}}</a>
       </table>
     </div>

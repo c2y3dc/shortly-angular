@@ -1,11 +1,14 @@
-<div id='container'>
+<div id='container' class='row'>
+  <div class='col-md-6 col-md-offset-3'>
 <!-- Your code here -->
-    <form name= "myLink" ng-submit='addLink()'>
-      <input name="textInput" type="text" ng-model="link.url" ng-pattern="/^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i">
-      <button>submit</button>
-      <span ng-show="myLink.textInput.$error.pattern">Not a valid URL</span>
+    <!-- <div class="input-group input-group-add-link"> -->
+      <!-- <span class="input-group-addon">URL</span> -->
+        <form name= "myLink" ng-submit='addLink()'>
+        <input name="textInput" class="form-control" ng-pristine ng-valid type="text" ng-model="link.url" ng-pattern="/^(?!mailto:)(?:(?:https?|ftp):\/\/)?(?:\S+(?::\S*)?@)?(?:(?:(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[0-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))|localhost)(?::\d{2,5})?(?:\/[^\s]*)?$/i">
+      <button class="btn btn-info">submit</button>
+      <span class="btn btn-danger" ng-show="myLink.textInput.$error.pattern">Not a valid URL</span>
+    <a class= 'btn btn-primary' href='/#/links'>Shortly</a>
     </form>
-    <button><a href='/#/links'>links</a></button>
 
 </div>
 
