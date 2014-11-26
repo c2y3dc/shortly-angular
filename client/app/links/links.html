@@ -1,10 +1,18 @@
-<div id='container'>
-  <div ng-init='getLinks()' ng-model='links'>
-      <input ng-model='search'>
-    <ul>
-      <li ng-repeat="link in data.links | orderBy: '-visits' | filter:search"> visit count {{link.visits}} -- {{link.url}} --> <a href={{link.base_url}}/api/links/{{link.code}}>click</a> </li>
-    </ul>
-  </div>
-  <button><a href='/#/shorten'>Shorten your url</a></button>
+<div id='container' class='row'>
+  <div class='col-md-6 col-md-offset-3'>
+    <div ng-init='getLinks()' ng-model='links'>
+      <div class="input-group input-group-get-link">
+        <span class="input-group-addon">Search</span>
+        <input type="text" ng-model='search' class="form-control" placeholder="URL">
+      </div>
+
+      <table class="table table-striped">
+
+
+
+        <a class='list-group-item' href="{{link.base_url}}/api/links/{{link.code}}" ng-repeat="link in data.links | orderBy: '-visits' | filter:search"> visit count {{link.visits}} -- {{link.url}}</a>
+      </table>
+    </div>
+    <a class='btn btn-primary' href='/#/shorten'>Shorten your url</a>
 </div>
 

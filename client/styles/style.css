@@ -146,3 +146,7 @@ input[type=url]:focus {
   clear: both;
 }
 
+.input-group-get-link {
+  margin-bottom: 10px;
+}
+
