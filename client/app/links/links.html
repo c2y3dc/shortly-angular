@@ -1,8 +1,9 @@
 <div id='container'>
-  <div ng-init='getLinks()' ng-model='data'>
+  <div ng-init='getLinks()' ng-model='links'>
     <ul>
-      <li ng-repeat='link in data'> {{link[0].url}} -> <a href={{link[0].base_url}}/api/links/{{link[0].code}}>click</a></li>
+      <li ng-repeat="link in data.links | orderBy: '-visits'"> visit count {{link.visits}} -- {{link.url}} --> <a href={{link.base_url}}/api/links/{{link.code}}>click</a> </li>
     </ul>
   </div>
+  <button><a href='/#/shorten'>Shorten your url</a></button>
 </div>
 
