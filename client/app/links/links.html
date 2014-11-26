@@ -1,7 +1,8 @@
 <div id='container'>
   <div ng-init='getLinks()' ng-model='links'>
+      <input ng-model='search'>
     <ul>
-      <li ng-repeat="link in data.links | orderBy: '-visits'"> visit count {{link.visits}} -- {{link.url}} --> <a href={{link.base_url}}/api/links/{{link.code}}>click</a> </li>
+      <li ng-repeat="link in data.links | orderBy: '-visits' | filter:search"> visit count {{link.visits}} -- {{link.url}} --> <a href={{link.base_url}}/api/links/{{link.code}}>click</a> </li>
     </ul>
   </div>
   <button><a href='/#/shorten'>Shorten your url</a></button>
